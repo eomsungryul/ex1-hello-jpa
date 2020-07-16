@@ -28,7 +28,7 @@ public class JpaMain {
 		tx.begin();
 		
 		try {
-//			INSERT
+//			// INSERT 예제
 //			Member member = new Member();
 //			member.setId(2L);
 //			member.setName("HelloB");
@@ -36,21 +36,24 @@ public class JpaMain {
 //			em.persist(member); // persist 저장
 //	
 
-//			SELECT
+//			// SELECT 예제
 //			Member findMember = em.find(Member.class, 1L);
 //			System.out.println(findMember.getId());
 //			System.out.println(findMember.getName());
 			
-			// UPDATE
+			
+//			// UPDATE
 //			Member findMember = em.find(Member.class, 1L);
 ////			 jpa를 통해 값을 가져오게 되면 그 값을 영속적으로 관리 
 ////			 UPDATE 쿼리가 즉시 수행 됨.
 //			findMember.setName("HelloJPA");
 			
-			// JPQL 예제
+			
+//			// JPQL 예제
 //			List<Member> result = em.createQuery("select m from Member as m", Member.class).getResultList()
 			
-			// 페이징 예제
+			
+//			// 페이징 예제
 //			List<Member> result = em.createQuery("select m from Member as m", Member.class)
 //					.setFirstResult(10)
 //					.setMaxResults(50)
@@ -60,7 +63,8 @@ public class JpaMain {
 //				System.out.println("member.name = " + member.getName());
 //			}
 	
-			//객체를 생성한 상태(비영속)
+			
+//			//객체를 생성한 상태(비영속)
 //			Member member = new Member();
 //			member.setId(101L);
 //			member.setName("TEST");;
@@ -70,7 +74,7 @@ public class JpaMain {
 //			System.out.println("=== AFTER ===");
 //			
 			
-			// 영속성 컨텍스트 예제
+//			// 영속성 컨텍스트 예제
 //			Member member = new Member();
 //			member.setId(101L);
 //			member.setName("TEST");;
@@ -96,7 +100,6 @@ public class JpaMain {
 			em.persist(member2);
 			
 			System.out.println("=================");
-			
 			
 			tx.commit();
 		} catch(Exception e) {
