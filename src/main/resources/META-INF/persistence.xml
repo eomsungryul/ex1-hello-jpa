@@ -23,7 +23,7 @@
 			<property name="hibernate.format_sql" value="true" />
 			<property name="hibernate.use_sql_comments" value="true" />     
 <!-- 			테이블 드랍 후 테이블 생성         -->
-			<property name="hibernate.hbm2ddl.auto" value="create" /> 
+<!-- 			<property name="hibernate.hbm2ddl.auto" value="create" />  -->
 <!-- 			테이블 드랍 후 테이블 생성 후 애플리케이션 종료 시점에 드랍. -->
 <!-- 			<property name="hibernate.hbm2ddl.auto" value="create-drop" />  -->
 <!-- 			애플리케이션 종료 시점에 드랍치 않고 특정 컬럼을 alter하고 싶을때. 컬럼 추가만 가능 -->
