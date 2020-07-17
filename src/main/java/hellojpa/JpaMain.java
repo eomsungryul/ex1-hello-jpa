@@ -93,15 +93,32 @@ public class JpaMain {
 //			
 			
 			// 쓰기지연SQL 저장소 예제
-			Member member1 = new Member(111L, "A");
-			Member member2 = new Member(222L, "B");
-
-			em.persist(member1);
-			em.persist(member2);
+//			Member member1 = new Member(111L, "A");
+//			Member member2 = new Member(222L, "B");
+//
+//			em.persist(member1);
+//			em.persist(member2);
+//			
+//			System.out.println("=================");
+//			
+//			tx.commit();
+			
+			//플러시 예제
+//			Member member = new Member(200L, "member200");
+//			em.persist(member);
+//			em.flush(); //강제 호출
+//			System.out.println("=================");
+			
+			//준영속 상태 예제
+//			Member member = em.find(Member.class, 150L);
+//			member.setName("AAAAA");
+//			
+//			em.detach(member); //준영속 컨텍스트로 변경. JPA에서 관리 X
+//			em.clear(); //영속성 컨텍스트를 통째로 지움. 초기화. 1차 캐시도 사라짐.
+//			
+//			Member member2 = em.find(Member.class, 150L); //초기화 되었기에, 영속성 컨텍스트가 처음부터 다시 올려진다.
 			
 			System.out.println("=================");
-			
-			tx.commit();
 		} catch(Exception e) {
 			tx.rollback();
 		} finally {

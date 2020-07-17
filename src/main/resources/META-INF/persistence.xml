@@ -15,12 +15,24 @@
 <!-- 			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" /> -->
 <!-- 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect " /> -->
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MariaDB103Dialect " />
+			<!-- 각 데이터베이스의 방언에 맞게 적절하게 컬럼을 생성해준다. ex) orcale: varchar2 -->
+<!-- 			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect " /> -->
 			                  
 			<!-- 옵션 -->
 			<property name="hibernate.show_sql" value="true" /> <!-- DB 쿼리 나가는거 볼건지 여부 -->
 			<property name="hibernate.format_sql" value="true" />
-			<property name="hibernate.use_sql_comments" value="true" />             
-			<!--<property name="hibernate.hbm2ddl.auto" value="create" /> -->
+			<property name="hibernate.use_sql_comments" value="true" />     
+<!-- 			테이블 드랍 후 테이블 생성         -->
+			<property name="hibernate.hbm2ddl.auto" value="create" /> 
+<!-- 			테이블 드랍 후 테이블 생성 후 애플리케이션 종료 시점에 드랍. -->
+<!-- 			<property name="hibernate.hbm2ddl.auto" value="create-drop" />  -->
+<!-- 			애플리케이션 종료 시점에 드랍치 않고 특정 컬럼을 alter하고 싶을때. 컬럼 추가만 가능 -->
+<!-- 			<property name="hibernate.hbm2ddl.auto" value="update" />  -->
+<!-- 			엔티티와 테이블이 정상 매핑되었는지만 확인 -->
+<!-- 			<property name="hibernate.hbm2ddl.auto" value="validate" /> -->
+<!-- 			사용치 않겠다. -->
+<!-- 			<property name="hibernate.hbm2ddl.auto" value="none" /> -->
 		</properties>
 	</persistence-unit>
 </persistence> 
+
