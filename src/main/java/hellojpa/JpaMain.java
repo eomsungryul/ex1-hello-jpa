@@ -118,9 +118,40 @@ public class JpaMain {
 //			
 //			Member member2 = em.find(Member.class, 150L); //초기화 되었기에, 영속성 컨텍스트가 처음부터 다시 올려진다.
 			
+			//7. 단방향 연관관계
+			//팀, 멤버 생성
+			Team team = new Team();
+			team.setName("TeamA");
+			em.persist(team);
 			
 			
 			
+			Member member = new Member();
+			member.setUsername("member1");
+			member.setTeam(team);//jpa가 team에서 PK값을 꺼내어 insert 시 외래키로 사용한다.
+//			
+//			//멤버를 팀에 소속
+//			member.setTeamId(team.getId()); //애매한 부분.
+			em.persist(member);
+//			
+//			em.flush();
+//			em.clear(); //select 쿼리가 나가는 것을 확인할 수 있다.
+			
+//			//특정 멤버가 소속되어있는 팀을 찾고자 한다면...
+			Member findMember = em.find(Member.class, member.getId());//멤버의 아이디를 가져옴
+//			Long findTeamId = findMember.getTeamId();//팀 아이디를 가져옴
+//			Team findTeam = em.find(Team.class, findTeamId);//팀 아이디로 팀 조회
+//			//연관관계가 없어 여러 번 질의를 해야하는 부분이 생기게 된다.
+			
+			//특정 멤버가 소속되어있는 팀을 찾고자 한다면...ver.2
+			Team findTeam = findMember.getTeam();//특정 멤버의 팀을 바로 가져올 수 있다
+			System.out.println("findTeam = "+findTeam.getName());
+			
+			//만약 새로운 팀으로 영입하고자 한다면?
+			Team newTeam = em.find(Team.class, 100L);//pk가 100인 멤버을 찾는다(100번인 멤버가 있다고 가정). 
+			findMember.setTeam(newTeam);//찾은 멤버를 새로운 팀으로 세팅한다.
+			
+			tx.commit();
 			System.out.println("=================");
 		} catch(Exception e) {
 			tx.rollback();
