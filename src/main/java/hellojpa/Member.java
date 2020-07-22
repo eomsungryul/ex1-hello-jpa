@@ -8,7 +8,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-
 //@Table(name = "MBR") // MBR이라는 테이블과 매핑된다.
 //@Entity(name = "Member") // 다른 패키지의 같은 이름의 클래스가 있는 경우 하나는 다른 이름을 써줘야 할 때 정도 사용.
 // @Table(name = "USER") 테이블 서로 다를 경우 매핑
@@ -18,7 +17,7 @@ public class Member {
 	// @Column(name = "id") 칼럼명 서로 다를 경우 매핑
 	@Column(name = "MEMBER_ID")
 	private Long id;
-	
+
 	@Column(name = "USERNAME")
 	private String username;
 	
@@ -95,3 +94,4 @@ public class Member {
 //		this.name = name;
 //	}
 }
+

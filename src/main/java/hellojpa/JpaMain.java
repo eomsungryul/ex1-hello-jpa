@@ -102,7 +102,7 @@ public class JpaMain {
 //			System.out.println("=================");
 //			
 //			tx.commit();
-			
+
 			//플러시 예제
 //			Member member = new Member(200L, "member200");
 //			em.persist(member);
@@ -152,6 +152,7 @@ public class JpaMain {
 			findMember.setTeam(newTeam);//찾은 멤버를 새로운 팀으로 세팅한다.
 			
 			tx.commit();
+
 			System.out.println("=================");
 		} catch(Exception e) {
 			tx.rollback();
