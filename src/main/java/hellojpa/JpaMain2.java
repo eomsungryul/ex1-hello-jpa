@@ -27,7 +27,7 @@ public class JpaMain2 {
 		
 		try {
 
-//			¿¬°ü°ü°èÀÇ ¸ÅÇÎ ‹š¹®¿¡ Member¿¡ teamÀÌ ÀÔ·ÂµÇÁö ¾Ê´Â´Ù.
+//			ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Memberï¿½ï¿½ teamï¿½ï¿½ ï¿½Ô·Âµï¿½ï¿½ï¿½ ï¿½Ê´Â´ï¿½.
 //			Member member = new Member();
 //			member.setUsername("memberA");
 //			em.persist(member);
@@ -55,7 +55,7 @@ public class JpaMain2 {
 			Team findTeam = em.find(Team.class, team.getId());
 			List<Member> members = findTeam.getMembers();
 			
-			tx.commit();
+			tx.commit()//ì¼ëŒ€ë‹¤ ë‹¨ë°©í–¥;
 
 			System.out.println("=================");
 		} catch(Exception e) {

@@ -17,7 +17,8 @@ public class Team {
 	private Long id;
 	private String name;
 	
-	@OneToMany(mappedBy = "team")
+	
+	@OneToMany(mappedBy = "team") //일대다 단방향
 	List<Member> members = new ArrayList<Member>();
 	
 	public Long getId() {
