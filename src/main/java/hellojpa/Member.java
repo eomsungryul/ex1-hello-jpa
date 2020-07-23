@@ -20,20 +20,21 @@ public class Member {
 
 	@Column(name = "USERNAME")
 	private String username;
-	
+
 //	@Column(name = "TEAM_ID")
 //	private Long teamId;
-	
+
+	//다대일 이쪽에만 있으면 단방향
 	//외래키가 있는 곳이 연관관계의 주인.
-//	@ManyToOne//N:1//Member와 Team이 어떠한 관계인지 나타내준다 1대다? 다대1?
-//	@JoinColumn(name = "TEAM_ID")//조인할 컬럼을 명시한다.
-//	private Team team; 
-	
+	@ManyToOne//N:1//Member와 Team이 어떠한 관계인지 나타내준다
+	@JoinColumn(name = "TEAM_ID")//조인할 컬럼을 명시한다.
+	private Team team;
+
 	//일대다 양방향 예제 안씀 ㅡㅡ
 //	@ManyToOne
 //	@JoinColumn(name = "TEAM_ID",insertable = false, updatable = false)//읽기전용
-//	private Team team; 
-	
+//	private Team team;
+
 
 	public Long getId() {
 		return id;
@@ -51,20 +52,20 @@ public class Member {
 		this.username = username;
 	}
 
-//	public Team getTeam() {
-//		return team;
-//	}
+	public Team getTeam() {
+		return team;
+	}
+
+	public void setTeam(Team team) {
+		this.team = team;
+	}
 //
-//	public void setTeam(Team team) {
-//		this.team = team;
-//	}
-//	
 //	//연관관계 편의 메소드
 //	public void changeTeam(Team team) {
 //		this.team = team;
 //		team.getMembers().add(this);
 //	}
-//	
+//
 
 //	public Long getTeamId() {
 //		return teamId;
@@ -73,21 +74,21 @@ public class Member {
 //	public void setTeamId(Long teamId) {
 //		this.teamId = teamId;
 //	}
-	
+
 	//private String name;
 	//private int age;
 	//private int gogo;
 	// Getter, Setter …
-	
+
 //	public Member() {
-//		
+//
 //	}
-//	
+//
 //	public Member(Long id, String name) {
 //		this.id = id;
 //		this.name = name;
 //	}
-//	
+//
 //
 //	public Long getId() {
 //		return id;

@@ -7,20 +7,34 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
 public class Team {
-	
+
 	@Id @GeneratedValue
 	@Column(name = "TEAM_ID")
 	private Long id;
 	private String name;
-	
-	
-	@OneToMany(mappedBy = "team") //ÀÏ´ë´Ù ´Ü¹æÇâ
+
+	//ë‹¤ëŒ€ì¼ ì–‘ë°©í–¥ìœ¼ë¡œ ì“¸ê²½ìš°
+	@OneToMany(mappedBy = "team")
 	List<Member> members = new ArrayList<Member>();
-	
+
+//	//ì¼ëŒ€ë‹¤
+//	@OneToMany
+////	@JoinColumn(name="TEAM_ID") //ì£¼ì„ ì²˜ë¦¬ ì‹œ í…Œì´ë¸”ì´ í•œê°œ ë” ìƒì„±
+//	List<Member> members = new ArrayList<Member>();
+
+
+//	public List<Member> getMembers() {
+//		return members;
+//	}
+//	public void setMembers(List<Member> members) {
+//		this.members = members;
+//	}
+
 	public Long getId() {
 		return id;
 	}
@@ -33,17 +47,17 @@ public class Team {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public List<Member> getMembers() {
-		return members;
-	}
-	public void setMembers(List<Member> members) {
-		this.members = members;
-	}
-	
-	// ¿¬°ü°ü°è ÆíÀÇ ¸Ş¼Òµå
-	public void addMember(Member member) {
-		member.setTeam(this);
-		members.add(member);
-	}
-	
+//	public List<Member> getMembers() {
+//		return members;
+//	}
+//	public void setMembers(List<Member> members) {
+//		this.members = members;
+//	}
+//
+	// ì—°ê´€ê´€ê³„ í¸ì˜ ë©”ì†Œë“œ
+//	public void addMember(Member member) {
+//		member.setTeam(this);
+//		members.add(member);
+//	}
+
 }
