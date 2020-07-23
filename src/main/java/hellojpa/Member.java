@@ -24,6 +24,7 @@ public class Member {
 //	@Column(name = "TEAM_ID")
 //	private Long teamId;
 	
+	//외래키가 있는 곳이 연관관계의 주인.
 	@ManyToOne//N:1//Member와 Team이 어떠한 관계인지 나타내준다 1대다? 다대1?
 	@JoinColumn(name = "TEAM_ID")//조인할 컬럼을 명시한다.
 	private Team team; 
@@ -51,7 +52,13 @@ public class Member {
 	public void setTeam(Team team) {
 		this.team = team;
 	}
-	
+//	
+//	//연관관계 편의 메소드
+//	public void changeTeam(Team team) {
+//		this.team = team;
+//		team.getMembers().add(this);
+//	}
+//	
 
 //	public Long getTeamId() {
 //		return teamId;
