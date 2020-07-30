@@ -7,7 +7,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -19,8 +18,8 @@ public class Team {
 	private String name;
 
 	//다대일 양방향으로 쓸경우
-	@OneToMany(mappedBy = "team")
-	List<Member> members = new ArrayList<Member>();
+//	@OneToMany(mappedBy = "team")
+//	List<Member> members = new ArrayList<Member>();
 
 //	//일대다
 //	@OneToMany
